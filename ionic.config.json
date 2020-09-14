@@ -1,0 +1,7 @@
+{
+  "name": "KKMApp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
