@@ -1,0 +1,45 @@
+
+<ion-content>
+
+    <ion-list>
+      <form [formGroup]="form">
+        <ion-item>
+          <ion-label position="floating">Username</ion-label>
+          <ion-input formControlName="username" type="text"></ion-input>
+          <!-- <p>Gtest</p> -->
+        </ion-item>
+  
+        <ion-item>
+          <ion-label position="floating">Password</ion-label>
+          <ion-input formControlName="password" type="password"></ion-input>
+        </ion-item>
+        <p style="color: red" class="ion-padding-start ion-text-left" *ngIf="!form.controls.password.valid">
+          min password must be at least 8 characters</p>
+        <ion-button expand="block" (click)="submit()">Login</ion-button>
+        <ion-button expand="block" (click)="change()">Change Email</ion-button>
+      </form>
+      
+
+    </ion-list>
+</ion-content>
+
+
+<!-- <ion-content>
+
+  <ion-list>
+    
+    <ion-item>
+      <ion-label position="floating">Username</ion-label>
+      <ion-input [(ngModel)]="userEmail"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Password</ion-label>
+      <ion-input [(ngModel)]="userPassword" type="password"></ion-input>
+    </ion-item>
+
+    <ion-button expand="block" (click)="submit()">Login</ion-button>
+    <ion-button expand="block" (click)="change()">Change Email</ion-button>
+
+  </ion-list>
+</ion-content> -->

@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>ListAduan</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="logout()">Logout</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<form [formGroup]="form">
+  <ion-list>
+    <ion-item>
+      <ion-label position="floating">Tajuk</ion-label>
+      <ion-input formControlName="title" type="text"></ion-input>
+    </ion-item>
+    <p class="ion-padding start" style="color: red" *ngIf="!form.controls.title.valid">
+      Title must be at least 4 characters
+    </p>
+    <ion-item>
+      <ion-textarea formControlName="masalah" rows="5" type="text" placeholder="Nyatakan masalah aduan"></ion-textarea>
+    </ion-item>
+    <p class="ion-padding start" style="color: red" *ngIf="!form.controls.masalah.valid">
+      Please enter valid information
+    </p>
+    <ion-item>
+      <ion-label>Kategori</ion-label>
+       <!-- interface of ion-select can be action-sheet, popover or alert -->
+      <ion-select formControlName="kategori" placeholder="Sila buat pilihan" interface="popover">
+        <ion-select-option value="Kerosakan">Kerosakan</ion-select-option>
+        <ion-select-option value="Bencana">Bencana</ion-select-option>
+        <ion-select-option value="Lain-lain">Lain-lain</ion-select-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+  <ion-button expand="block" (click)="submitForm()">Hantar</ion-button>
+</form>
+
+  <ion-list>
+    <ion-item *ngFor="let item of listAduan">
+      <ion-label class="ion-text-wrap">
+        <p>Id: {{ item.aduan_id }}</p>
+        <h2>Tajuk Aduan: {{ item.title }}</h2>
+      </ion-label>
+      <ion-note slot="end">
+        Status: {{ item.status }}
+      </ion-note>
+    </ion-item>
+  </ion-list>
+</ion-content>
