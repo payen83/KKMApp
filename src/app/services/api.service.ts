@@ -1,7 +1,5 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { resolve } from 'dns';
-import { error } from 'protractor';
 
 @Injectable({
   providedIn: 'root'
@@ -10,8 +8,8 @@ export class ApiService {
   public baseURL: string;
   public userData: any;
   constructor(public http: HttpClient) { 
-    // this.baseURL = 'http://nre.appsmalaya.com/helpdesk/api/';
-    this.baseURL = 'http://localhost:8888/helpdesk/api/';
+    this.baseURL = 'https://nre.appsmalaya.com/helpdesk/api/';
+    // this.baseURL = 'http://localhost:8888/helpdesk/api/';
     this.userData = {};
   }
 

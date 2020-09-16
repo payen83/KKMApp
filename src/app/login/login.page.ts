@@ -22,6 +22,7 @@ export class LoginPage implements OnInit {
   ngOnInit() {
     this.userPassword = null;
     this.userEmail = null;
+    this.form.reset();
   }
 
   submit() {
@@ -40,6 +41,7 @@ export class LoginPage implements OnInit {
       // if the object res contains userData, 
       // then navigate to aduan list page
       if(res.userData) {
+        this.ngOnInit();
         this.api.storeUserData(res.userData);
         this.router.navigateByUrl('list-aduan');
       } else {

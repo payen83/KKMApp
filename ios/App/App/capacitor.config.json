@@ -1,6 +1,6 @@
 {
-  "appId": "my.gov.onegovappstore.myhealth",
-  "appName": "My Health",
+  "appId": "com.kkm.myhealthapp",
+  "appName": "MyHealthApp",
   "bundledWebRuntime": false,
   "npmClient": "npm",
   "webDir": "www",
